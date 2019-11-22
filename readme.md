@@ -1,4 +1,6 @@
-## Project based on Laravel Boilerplate (Current: Laravel 6.0)
+## RubricaActiveDirectory - Project based on Laravel Boilerplate 6.0
+
+### Laravel Boilerplate
 
 [![Latest Stable Version](https://poser.pugx.org/rappasoft/laravel-boilerplate/v/stable)](https://packagist.org/packages/rappasoft/laravel-boilerplate)
 [![Latest Unstable Version](https://poser.pugx.org/rappasoft/laravel-boilerplate/v/unstable)](https://packagist.org/packages/rappasoft/laravel-boilerplate) 
@@ -9,10 +11,11 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/rappasoft/laravel-boilerplate.svg)
 ![GitHub stars](https://img.shields.io/github/stars/rappasoft/laravel-boilerplate.svg?style=social)
 
-### Laravel Boilerplate - Official Documentation
+
 
 [Click here for the official documentation](http://laravel-boilerplate.com)
 
 
-### RubricaActiveDirectory - Project 
+### RubricaActiveDirectory
+
 Address book from data in Active Directory
