@@ -22,9 +22,9 @@ Address book from data in Active Directory with qr-code dinamically generated
 
 #### RubricaActiveDirectory - Setup
 
-git clone https://github.com/MaoX17/RubricaActiveDirectory.git
-Create a file (.env) from example (.env.example)
-Configure web server
+git clone https://github.com/MaoX17/RubricaActiveDirectory.git <br/> 
+Create a file (.env) from example (.env.example) <br/>
+Configure web server <br/>
 
 Data mapping:
 
