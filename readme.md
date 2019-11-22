@@ -18,4 +18,14 @@
 
 ### RubricaActiveDirectory
 
-Address book from data in Active Directory
+Address book from data in Active Directory with qr-code dinamically generated
+
+Data mapping:
+
+title = this field HAVE NOT to be empty - if this field is empty the record will not shown on address book
+cn = Name & Surname
+department = Deparment
+company = Company
+TelephoneNumber = Telephone Number
+Email = Email
+
