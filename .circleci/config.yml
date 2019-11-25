@@ -32,6 +32,7 @@ jobs:
             - node_modules
       - run: yarn test
       - run: yarn run production
+      - run: composer require adldap2/adldap2-laravel simplesoftwareio/simple-qrcode
       - run: cp .env.example .env
       - run: php artisan key:generate
       - run: ./vendor/bin/phpunit
