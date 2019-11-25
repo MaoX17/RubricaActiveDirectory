@@ -38,3 +38,6 @@ jobs:
       - run: composer require adldap2/adldap2-laravel simplesoftwareio/simple-qrcode
       - run: php artisan key:generate
       - run: ./vendor/bin/phpunit
+
+
+
