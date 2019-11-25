@@ -12,12 +12,13 @@ jobs:
       - run: sudo apt-get install -y libpng-dev
       - run: sudo docker-php-ext-install gd
       - run: sudo composer self-update
+      - run: composer require adldap2/adldap2-laravel simplesoftwareio/simple-qrcode
       - restore_cache:
           keys:
             - composer-v1-{{ checksum "composer.lock" }}
             - composer-v1-
-      - run: composer require adldap2/adldap2-laravel simplesoftwareio/simple-qrcode
       - run: composer install -n --prefer-dist
+      - run: composer require adldap2/adldap2-laravel simplesoftwareio/simple-qrcode
       - save_cache:
           key: composer-v1-{{ checksum "composer.lock" }}
           paths:
@@ -34,5 +35,6 @@ jobs:
       - run: yarn test
       - run: yarn run production
       - run: cp .env.example .env
+      - run: composer require adldap2/adldap2-laravel simplesoftwareio/simple-qrcode
       - run: php artisan key:generate
       - run: ./vendor/bin/phpunit
