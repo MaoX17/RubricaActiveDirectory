@@ -121,6 +121,7 @@ END:VCARD'))
         <br /><br />
 
         <!-- Vice Presidente -->
+<!--
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#vicepresidente"
             aria-expanded="false" aria-controls="vicepresidente" data-parent="#istituzionali">
             Vice Presidente
@@ -164,6 +165,8 @@ END:VCARD'))
             </div>
         </div>
         <br /><br />
+-->
+
 
 
         <!-- Segretario Generale -->
@@ -185,7 +188,7 @@ VERSION:4.0
 FN:Simonetta Fedeli
 ORG:Provincia di Prato
 TITLE:Segretario Generale
-TEL;TYPE=work,voice;VALUE=uri:tel:+39-0574-534-616
+TEL;TYPE=work,voice;VALUE=uri:tel:+39-0574-534-623
 EMAIL:sfedeli@provincia.prato.it
 END:VCARD'))
 !!}" alt="QR-Code">
@@ -202,9 +205,10 @@ END:VCARD'))
                         <abbr title="Phone">Tel:</abbr>
                         <span itemprop="telephone" style="display:inline-block;">
 
-                            <a href="tel:+390574534616">+39 0574 534 616</a>
+                            <a href="tel:+390574534623">+39 0574 534 623</a>
                         </span>
                     </p>
+
 
                 </div>
             </div>
