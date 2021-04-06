@@ -139,7 +139,8 @@ class HomeController extends Controller
             'physicaldeliveryoffice' => $search_servizio,
         ];
         */
-        $results = Adldap::search()->users()->whereHas('title')->where($wheres)->sortBy('cn', 'asc')->get();
+        $results = Adldap::search()->users()->whereHas('title')->where($wheres)->whereEnabled()->sortBy('cn', 'asc')->get();
+
 
         /*
         $results = Adldap::search()->users()
