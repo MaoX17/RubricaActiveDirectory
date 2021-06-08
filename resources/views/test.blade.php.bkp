@@ -1,0 +1,309 @@
+@extends('frontend.layouts.app')
+
+@section('title', app_name() . ' | ' . __('navs.general.home'))
+
+@section('content')
+    <div class="row mb-4">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-home"></i> @lang('strings.frontend.welcome_to', ['place' => app_name()])
+                </div>
+                <div class="card-body">
+                    <div class="col col-md-6 col-sm-12 col-12">
+                        <h3>Contatti del personale</h3>
+                        <div>
+                            <div class="btn-group btn-group-sm">
+                                <a href="{{route('frontend.result', ['cognome' => 'all','servizio' => 'all','area' => 'all'])}}" class="btn btn-primary">Tutti</a>
+                                @for ($i=65; $i<=90; $i++)
+                                    <a href="{{route('frontend.result', ['cognome' => chr($i),'servizio' => 'all','area' => 'all'])}}" class="btn btn-primary">{{chr($i)}}</a>
+                                @endfor
+
+                            </div>
+                        </div>
+
+                        <div>&nbsp;</div>
+
+                        <div>
+                            <form class="form-horizontal" action="<?=$_SERVER['SCRIPT_NAME']?>#risultati" method="get">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="cognome" class="col-md-4 control-label">Cognome</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="cognome" id="cognome" placeholder="Cognome">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="area" class="col-md-4 control-label">Area</label>
+                                    <div class="col-md-4">
+                                        <select name="area" id="area" class="form-control">
+                                            <option value="%" selected="selected" label="area selezionata"></option>
+
+                                            @foreach($aree as $area)
+                                                <option value="{{$area}}" label="area selezionata">{{$area}}</option>
+                                            @endforeach
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="servizio" class="col-md-4 control-label">Servizio</label>
+                                    <div class="col-md-4">
+                                        <select name="servizio" id="servizio" class="form-control">
+                                            <option value="%" selected="selected" label="servizio selezionato"></option>
+
+                                            @foreach($servizi as $servizio)
+                                                <option value="{{$servizio}}" label="servizio selezionato">{{$servizio}}</option>
+                                            @endforeach
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Cerca</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col col-md-6 col-sm-12 col-12" id="istituzionali">
+                        <h3>Contatti Istituzionali</h3>
+
+                        <!-- Presidente -->
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#presidente" aria-expanded="false"
+                            aria-controls="presidente" data-parent="#istituzionali">
+                            Presidente
+                        </button>
+                        <div class="collapse col-sm-12 col-12" id="presidente">
+                            <div class="media">
+                                <div class="pull-left">
+                                    </div>
+                                    <div class="media-body" itemscope itemtype="http://schema.org/GovernmentOrganization">
+
+                                        <address>
+
+                                            <meta itemprop="description" content="Amministrazione Provinciale di Prato" />
+                                            <meta itemprop="vatID" content="92035800488" />
+                                            <meta itemprop="url" content="http://www.provincia.prato.it" />
+                                            <span itemprop="name" style="display:none;"><strong>Provincia di Prato</strong></span>
+
+                                            <div itemprop="member" itemscope itemtype="http://schema.org/Person">
+                                                <span style="display:block;">
+                                                    <span itemprop="name" style="display:inline-block;">
+                                                        <strong>
+                                                            Presidente Francesco Puggelli
+                                                        </strong>
+                                                    </span>
+                                                </span>
+
+                                                Ruolo:
+                                                <span itemprop="jobtitle" style="display:inline-block;">
+                                                    <strong>
+                                                        Presidente
+                                                    </strong>
+                                                </span>
+                                                <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                                                    <span itemprop="streetAddress" style="display:block;">via Ricasoli, 25</span>
+                                                    <span itemprop="addressLocality" style="display:inline-block;">Prato</span>
+                                                    <span itemprop="postOfficeBoxNumber" style="display:inline-block;">(PO)</span>
+                                                    <span itemprop="addressRegion" style="display:none;">Toscana</span>
+                                                    <span itemprop="postalCode" style="display:inline-block;">59100</span>
+                                                    <span itemprop="addressCountry" style="display:none;">Italy</span>
+                                                </div>
+
+
+                                                <span itemprop="email" style="display:block;">
+                                                    <a href="mailto:presidente@provincia.prato.it">presidente@provincia.prato.it</a>
+                                                </span>
+
+
+                                                <abbr title="Phone">Tel:</abbr>
+                                                <span itemprop="telephone" style="display:inline-block;">
+
+                                                    <a href="tel:+390574534501">+39 0574 534 501</a>
+                                                </span>
+
+                                            </div>
+                                        </address>
+                                    </div>
+                                </div>
+                            </div>
+                            <br /><br />
+
+                            <!-- Vice Presidente -->
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#vicepresidente" aria-expanded="false"
+                                aria-controls="vicepresidente" data-parent="#istituzionali">
+                                VicePresidente
+                            </button>
+                            <div class="collapse col-sm-12 col-xs-12" id="vicepresidente">
+                                <div class="media">
+                                    <div class="pull-left">
+
+                                    </div>
+                                    <div class="media-body" itemscope itemtype="http://schema.org/GovernmentOrganization">
+
+                                        <address>
+
+                                            <meta itemprop="description" content="Amministrazione Provinciale di Prato" />
+                                            <meta itemprop="vatID" content="92035800488" />
+                                            <meta itemprop="url" content="http://www.provincia.prato.it" />
+                                            <span itemprop="name" style="display:none;"><strong>Provincia di Prato</strong></span>
+
+                                            <div itemprop="member" itemscope itemtype="http://schema.org/Person">
+                                                <span style="display:block;">
+                                                    <span itemprop="name" style="display:inline-block;">
+                                                        <strong>
+                                                            Vice Presidente Paola Tassi
+                                                        </strong>
+                                                    </span>
+                                                </span>
+
+                                                Ruolo:
+                                                <span itemprop="jobtitle" style="display:inline-block;">
+                                                    <strong>
+                                                        Vice Presidente
+                                                    </strong>
+                                                </span>
+                                                <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                                                    <span itemprop="streetAddress" style="display:block;">via Ricasoli, 25</span>
+                                                    <span itemprop="addressLocality" style="display:inline-block;">Prato</span>
+                                                    <span itemprop="postOfficeBoxNumber" style="display:inline-block;">(PO)</span>
+                                                    <span itemprop="addressRegion" style="display:none;">Toscana</span>
+                                                    <span itemprop="postalCode" style="display:inline-block;">59100</span>
+                                                    <span itemprop="addressCountry" style="display:none;">Italy</span>
+                                                </div>
+
+
+                                                <span itemprop="email" style="display:block;">
+                                                    <a href="mailto:ptassi@provincia.prato.it">ptassi@provincia.prato.it</a>
+                                                </span>
+
+
+                                                <abbr title="Phone">Tel:</abbr>
+                                                <span itemprop="telephone" style="display:inline-block;">
+
+                                                    <a href="tel:+390574534501">+39 0574 534 501</a>
+                                                </span>
+
+                                            </div>
+                                        </address>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <br /><br />
+
+                            <!-- Segretario Generale -->
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#segretariogenerale"
+                                aria-expanded="false" aria-controls="segretariogenerale" data-parent="#istituzionali">
+                                Segretario Generale
+                            </button>
+                            <div class="collapse col-sm-12 col-xs-12" id="segretariogenerale">
+
+
+
+                                <div class="media">
+                                    <div class="pull-left">
+
+                                    </div>
+                                    <div class="media-body" itemscope itemtype="http://schema.org/GovernmentOrganization">
+
+                                        <address>
+
+                                            <meta itemprop="description" content="Amministrazione Provinciale di Prato" />
+                                            <meta itemprop="vatID" content="92035800488" />
+                                            <meta itemprop="url" content="http://www.provincia.prato.it" />
+                                            <span itemprop="name" style="display:none;"><strong>Provincia di Prato</strong></span>
+
+                                            <div itemprop="member" itemscope itemtype="http://schema.org/Person">
+                                                <span style="display:block;">
+                                                    <span itemprop="name" style="display:inline-block;">
+                                                        <strong>
+                                                            Simonetta Fedeli
+                                                        </strong>
+                                                    </span>
+                                                </span>
+
+                                                Ruolo:
+                                                <span itemprop="jobtitle" style="display:inline-block;">
+                                                    <strong>
+                                                        Segretario Generale
+                                                    </strong>
+                                                </span>
+                                                <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                                                    <span itemprop="streetAddress" style="display:block;">via Ricasoli, 25</span>
+                                                    <span itemprop="addressLocality" style="display:inline-block;">Prato</span>
+                                                    <span itemprop="postOfficeBoxNumber" style="display:inline-block;">(PO)</span>
+                                                    <span itemprop="addressRegion" style="display:none;">Toscana</span>
+                                                    <span itemprop="postalCode" style="display:inline-block;">59100</span>
+                                                    <span itemprop="addressCountry" style="display:none;">Italy</span>
+                                                </div>
+
+
+                                                <span itemprop="email" style="display:block;">
+                                                    <a href="mailto:sfedeli@provincia.prato.it">sfedeli@provincia.prato.it</a>
+                                                </span>
+
+
+                                                <abbr title="Phone">Tel:</abbr>
+                                                <span itemprop="telephone" style="display:inline-block;">
+
+                                                    <a href="tel:+390574534616">+39 0574 534 616</a>
+                                                </span>
+
+                                            </div>
+                                        </address>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                    </div><!--card-body-->
+
+                </div><!--card-->
+        </div><!--col-->
+    </div><!--row-->
+
+
+
+@foreach($servizi as $servizio)
+    {{$servizio}}
+@endforeach
+
+
+@foreach($aree as $area)
+{{$area}}
+@endforeach
+
+
+
+    <div class="row mb-4">
+        <div class="col">
+            <example-component></example-component>
+            <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->merge('https://rubrica2.provincia.prato.it/img/stemma.png', 0.4, true)
+                                    ->size(200)->errorCorrection('H')
+                                    ->generate('W3Adda Laravel Tutorial')) !!} ">
+        </div><!--col-->
+    </div><!--row-->
+
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fab fa-font-awesome-flag"></i> Font Awesome @lang('strings.frontend.test')
+                </div>
+                <div class="card-body">
+                    <i class="fas fa-home"></i>
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-pinterest"></i>
+                </div><!--card-body-->
+            </div><!--card-->
+        </div><!--col-->
+    </div><!--row-->
+@endsection
