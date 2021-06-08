@@ -5,7 +5,7 @@
 Address book from data in Active Directory with qr-code dinamically generated
 
 ### Demo:
-https://rubrica2.provincia.praro.it
+https://rubrica2.provincia.prato.it
 
 #### RubricaActiveDirectory - Setup
 
