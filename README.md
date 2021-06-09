@@ -20,7 +20,59 @@ mkdir framework/testing
 mkdir framework/views
 ```
 
+npm install
+npm run dev or npm run prod
+
+composer install
+composer update
+
 Configure web server <br/>
+
+Example:
+
+```
+<VirtualHost ip.add.re.ss:80>
+
+       ServerName  rubrica.example.it
+
+       DocumentRoot /var/www/vhost/RubricaActiveDirectory/public
+
+include /etc/httpd/conf.d/redirect_https.inc
+
+
+       <Location />
+        Require all denied
+       </Location>
+</VirtualHost>
+
+<VirtualHost ip.add.re.ss:443>
+
+        ServerName  rubrica.example.it
+
+        DocumentRoot /var/www/vhost/RubricaActiveDirectory/public
+
+        SSLEngine on
+
+        # Certificato del server
+        SSLCertificateKeyFile /etc/httpd/conf/ssl.key/cert.key
+        SSLCertificateFile /etc/httpd/conf/ssl.crt/server.pem
+        SSLCertificateChainFile /etc/httpd/conf/ssl.crt/chain.pem
+        # Tipo certificati accettati (default)
+        SSLCipherSuite ALL:!ADH:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP:-eNULL
+        # Tipo valid. certificato (none,optional,require,optional_no_ca)
+        SSLVerifyClient none
+
+
+<Directory /var/www/vhost/RubricaActiveDirectory/public/>
+            Options Indexes FollowSymLinks MultiViews
+            AllowOverride All
+            Require all granted
+</Directory>
+
+
+</VirtualHost>
+
+```
 
 Data mapping:
 

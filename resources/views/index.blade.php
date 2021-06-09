@@ -228,14 +228,14 @@ END:VCARD'))
 <div class="row mb-4" id="risultati">
 
 
-@if (count($results) < 10 && count($results) > 0)
+@if (count($results))
     @foreach ($results as $user)
 
 
     <div class="col-sm-6">
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row no-gutters">
-              <div class="col-md-5">
+              <div class="col-md-5 d-none d-sm-block">
                 <img class="card-img" src="data:image/png;base64,
                     {!!
                     base64_encode(QrCode::format('png')
@@ -284,58 +284,7 @@ END:VCARD'))
     </div>
 
     @endforeach
-@else
-@foreach ($results as $user)
 
-
-<div class="col-sm-6">
-    <div class="card mb-3" style="max-width: 540px;">
-        <div class="row no-gutters">
-          <div class="col-md-5">
-            <img class="card-img" src="/user.jpg" alt="QR-Code">
-          </div>
-          <div class="col-md-7">
-            <div class="card-body">
-              <h5 class="card-title">
-                  <strong>
-                    {{ $user->getNomeCompleto() }}
-                  </strong>
-                </h5>
-
-                <address class="card-text">
-                    <strong>
-                        {{ $user->getNomeCompleto() }} <br>
-                    </strong>
-
-                    Ruolo:
-                    <strong>
-                        {{ $user->getJobTitle() }}<br>
-                    </strong>
-                    Servizio:
-                    <strong>
-                    {{ $user->getServizio() }}<br>
-                    </strong>
-                    Area:
-                    <strong>
-                    {{ $user->getArea() }}<br>
-                    </strong>
-
-                    <a href="mailto:" {{ $user->getEmail() }}>{{ $user->getEmail() }}</a><br>
-                    <abbr title="Phone">Tel:</abbr>
-                    <a href="tel:+39 {{ $user->getTel() }}">+39 {{ $user->getTel() }}</a>
-                </address>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-
-</div>
-
-@endforeach
 @endif
 
 </div>
