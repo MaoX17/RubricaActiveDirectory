@@ -1,5 +1,7 @@
 ## RubricaActiveDirectory - Project based on Laravel 8
 
+<img src="https://github.com/MaoX17/RubricaActiveDirectory/blob/master/public/img/ss.png">
+
 ### RubricaActiveDirectory
 
 Address book from data in Active Directory with qr-code dinamically generated
