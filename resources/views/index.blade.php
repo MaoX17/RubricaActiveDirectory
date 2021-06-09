@@ -239,7 +239,7 @@ END:VCARD'))
                 <img class="card-img" src="data:image/png;base64,
                     {!!
                     base64_encode(QrCode::format('png')
-                    ->size(200)->errorCorrection('L')
+                    ->size(200)
                     ->generate($user->getVcard()))!!}" alt="QR-Code">
               </div>
               <div class="col-md-7">
