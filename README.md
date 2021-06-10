@@ -1,6 +1,8 @@
 ## RubricaActiveDirectory - Project based on Laravel 8
 
 <img src="https://github.com/MaoX17/RubricaActiveDirectory/blob/master/public/img/ss.png">
+<br>
+<img src="https://github.com/MaoX17/RubricaActiveDirectory/blob/master/public/img/ss2.png">
 
 ### RubricaActiveDirectory
 
